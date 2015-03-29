@@ -1,0 +1,22 @@
+{
+    "version": "1.0.0",
+    "gameId": 1,
+    "name": "Farm",
+    "reelsCount":5,
+    "rowsCount":3,
+    "maxLines": 20,
+    "scatterKeys": ["3x", "4x", "5x"],
+    "scatterFreeSpins": {
+        "3x": 5, 
+        "4x": 10, 
+        "5x": 25
+    },
+    "bonusPayPercentage": 27,
+    "bonuskeys": ["3x", "4x", "5x"],
+    "bonusPayWeights":{
+        "3x": 1,
+        "4x": 4,
+        "5x": 10
+    },
+    "symbols": ["Wild", "HP1", "HP2", "HP3", "HP4", "HP5", "LP1", "LP2", "LP3", "LP4", "Scatter", "Bonus"]
+}

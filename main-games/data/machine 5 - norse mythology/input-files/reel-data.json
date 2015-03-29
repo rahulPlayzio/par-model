@@ -1,0 +1,16 @@
+{
+	"reelKeys": ["REEL1", "REEL2", "REEL3", "REEL4", "REEL5"],
+	"symbolDistribution": {
+		"Wild":		{"REEL1":	1,	"REEL2":	4,	"REEL3":	3,	"REEL4":	1,	"REEL5":	1},
+		"HP1":		{"REEL1":	4,	"REEL2":	4,	"REEL3":	1,	"REEL4":	1,	"REEL5":	1},
+		"HP2":		{"REEL1":	4,	"REEL2":	4,	"REEL3":	2,	"REEL4":	1,	"REEL5":	1},
+		"HP3":		{"REEL1":	4,	"REEL2":	4,	"REEL3":	3,	"REEL4":	2,	"REEL5":	1},
+		"HP4":		{"REEL1":	4,	"REEL2":	4,	"REEL3":	5,	"REEL4":	4,	"REEL5":	3},
+		"LP1":		{"REEL1":	7,	"REEL2":	7,	"REEL3":	7,	"REEL4":	7,	"REEL5":	7},
+		"LP2":		{"REEL1":	7,	"REEL2":	7,	"REEL3":	7,	"REEL4":	7,	"REEL5":	7},
+		"LP3":		{"REEL1":	8,	"REEL2":	8,	"REEL3":	8,	"REEL4":	8,	"REEL5":	8},
+		"LP4":		{"REEL1":	8,	"REEL2":	8,	"REEL3":	8,	"REEL4":	8,	"REEL5":	8},
+		"Scatter":	{"REEL1":	1,	"REEL2":	3,	"REEL3":	2,	"REEL4":	3,	"REEL5":	1},
+		"Bonus":	{"REEL1":	3,	"REEL2":	1,	"REEL3":	2,	"REEL4":	1,	"REEL5":	3}
+	}
+}

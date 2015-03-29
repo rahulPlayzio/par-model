@@ -1,0 +1,27 @@
+{
+	"scatterFrequency": 51.822701582211856, 
+	"scatterHitRatioSum": 0.0192965625, 
+	"scatterMultiplier": 1.1192499626188, 
+	"scatterHitDict": {
+		"3": 1836000, 
+		"5": 3888, 
+		"4": 136080
+		}, 
+	"scatterFrequencyDict": {
+		"3": 55.773420479302835, 
+		"5": 26337.448559670782, 
+		"4": 752.4985302763081
+		}, 
+	"scatterPayFactorSum": 0.10654453124999999, 
+	"scatterHitRatioDict": {
+		"3": 0.0179296875, 
+		"5": 3.796875e-05, 
+		"4": 0.00132890625
+		}, 
+	"totalCombos": 102400000, 
+	"scatterPayFactorDict": {
+		"3": 0.0896484375, 
+		"5": 0.00094921875, 
+		"4": 0.015946875
+		}
+	}

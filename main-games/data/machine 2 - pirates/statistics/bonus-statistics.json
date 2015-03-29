@@ -1,0 +1,24 @@
+{
+	"bonusWeightedHitSum": 0.00125, 
+	"bonusMaxLineFrequency": 34.538586076632484, 
+	"bonusWeightedHitRatio": {
+		"3": 0.001128125, 
+		"5": 3.125e-06, 
+		"4": 0.00011875
+		}, 
+	"bonusHitRatioDict": {
+		"3": 0.001128125, 
+		"5": 3.125e-07, 
+		"4": 2.96875e-05
+		}, 
+	"bonusPayValue": 216.0, 
+	"bonusHitDict": {
+		"3": 115520, 
+		"5": 32, 
+		"4": 3040
+		}, 
+	"totalComboCounts": 102400000, 
+	"bonusHitRatioSum": 0.001158125, 
+	"bonusPayPercentage": 27, 
+	"bonusMaxLineHitRatio": 0.028953125000000003
+}
