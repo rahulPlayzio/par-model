@@ -11,5 +11,7 @@
 	"LP4": 203,
 	"LP5": 204,
 	"Scatter": 1,
-	"Bonus": 2
+	"Bonus": 2,
+	"XWild": 3,
+	"Scatter Multiplier": 4
 }

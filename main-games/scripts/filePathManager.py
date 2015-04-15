@@ -1,6 +1,4 @@
-FP_INPUT_REEL_DATA      = 'input-files/reel-data.json'
-FP_PAYTABLE_DATA        = 'input-files/paytable-data.json'
-FP_GENERAL_GAME_DATA    = 'input-files/general-data.json'
+FP_MAIN_GAME_DATA       = 'input-files/main-game-data.json'
 
 FP_COMBO_PAY            = 'intermediate-files/combo-pay'
 FP_COMBO_COUNT          = 'intermediate-files/combo-count.json'
@@ -9,6 +7,7 @@ FP_REEL_STRIP           = 'intermediate-files/reel-strips.json'
 FP_LINE_STATISTICS      = 'statistics/line-pay-statistics.json'
 FP_BONUS_STATISTICS     = 'statistics/bonus-statistics.json'
 FP_SCATTER_STATISTICS   = 'statistics/scatter-statistics.json'
+FP_SCATTER_MULT_STATISTICS = 'statistics/scatter-multiplier-statistics.json'
 FP_GAME_STATISTICS      = 'statistics/game-statistics.json'
 
 FP_FORMATED_REEL        = 'formated-files/virtual-reel'
@@ -19,24 +18,9 @@ FP_GENERIC_TO_DEV_ID    = 'symbol-id-map.json'
 FP_GAME_MAP             = 'game-map.json'
 FOLDERNAME_GAME_DATA    = 'data'
 
-# INPUT FILES
-def GetGeneralDataPath(_gameName):
-  filePath = _GetGameDataFolderPath(_gameName) + '/'+ FP_GENERAL_GAME_DATA
-  return filePath
-
-# INPUT FILES
-def GetPayTableFilePath(_gameName):
-  filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_PAYTABLE_DATA
-  return filePath
-
-# INPUT FILES
-def GetReelDataFilePath(_gameName):
-  filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_INPUT_REEL_DATA
-  return filePath
-
-# INTERMEDIATE FILES
-def GetComboPayFilePath(_gameName):
-  filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_COMBO_PAY
+# Input FILE
+def GetMainGameFilePath(_gameName):
+  filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_MAIN_GAME_DATA
   return filePath
 
 # INTERMEDIATE FILES
@@ -64,12 +48,16 @@ def GetScatterStatsFilePath(_gameName):
   filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_SCATTER_STATISTICS
   return filePath
 
+def GetScatterMultStatsFilePath(_gameName):
+  filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_SCATTER_MULT_STATISTICS
+  return filePath
+
 # STATISTICS FILE
 def GetGameStatsFilePath(_gameName):
   filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_GAME_STATISTICS
   return filePath
 
-# DEV FILE
+# DEV FILES
 def GetFormatedReelFilePath(_gameName):
   filePath = _GetGameDataFolderPath(_gameName) + '/' + FP_FORMATED_REEL
   return filePath

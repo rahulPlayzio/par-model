@@ -5,18 +5,19 @@
     "reelsCount":5,
     "rowsCount":3,
     "maxLines": 20,
-    "scatterKeys": ["3x", "4x", "5x"],
+    "payBothWays": false,
+    "scatterKeys": ["3", "4", "5"],
     "scatterFreeSpins": {
-        "3x": 5, 
-        "4x": 10, 
-        "5x": 25
+        "3": 5, 
+        "4": 10, 
+        "5": 25
     },
-    "bonusPayPercentage": 27,
-    "bonuskeys": ["3x", "4x", "5x"],
+    "bonusPayPercentage": 17,
+    "bonuskeys": ["3", "4", "5"],
     "bonusPayWeights":{
-        "3x": 1,
-        "4x": 4,
-        "5x": 10
+        "3": 5,
+        "4": 20,
+        "5": 100
     },
-    "symbols": ["Wild", "HP1", "HP2", "HP3", "HP4", "HP5", "LP1", "LP2", "LP3", "LP4", "Scatter", "Bonus"]
+    "symbols": ["Wild", "HP1", "HP2", "HP3", "HP4", "HP5", "LP1", "LP2", "LP3", "LP4", "Scatter", "Scatter Multiplier"]
 }

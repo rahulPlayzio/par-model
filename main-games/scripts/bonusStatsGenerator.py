@@ -3,17 +3,24 @@ import utility
 import fileSystemManager
 import gameDataMediator
 
+
+CONST_BONUS_2X    = '2'
 CONST_BONUS_3X    = '3'
 CONST_BONUS_4X    = '4'
 CONST_BONUS_5X    = '5'
 CONST_BONUS_SYMBOL = 'Bonus'
 
+def BonusInGame(_gameName):
+  bonusInGame = utility.IsSymbolInReels(_gameName, CONST_BONUS_SYMBOL)
+  return bonusInGame
+
 def GetBonusHitDict(_gameName):
   bonusHitDict      = {}
   bonusKeyList      = gameDataMediator.GetBonusKeyList(_gameName)
-  bonusHitDict[bonusKeyList[0]] = Get3xBonusHitCount(_gameName)
-  bonusHitDict[bonusKeyList[1]] = Get4xBonusHitCount(_gameName)
-  bonusHitDict[bonusKeyList[2]] = Get5xBonusHitCount(_gameName)
+  bonusHitDict[CONST_BONUS_2X] = Get2xBonusHitCount(_gameName)
+  bonusHitDict[CONST_BONUS_3X] = Get3xBonusHitCount(_gameName)
+  bonusHitDict[CONST_BONUS_4X] = Get4xBonusHitCount(_gameName)
+  bonusHitDict[CONST_BONUS_5X] = Get5xBonusHitCount(_gameName)
   return bonusHitDict
 
 def GetBonusSymbolCountList(_gameName):
@@ -37,6 +44,21 @@ def GetHitCountAtIndex(_hitIndexList, _reelLength, _gameName):
       hitCount *= bonusCountList[index]
     else:
       hitCount *= (reelStripsLenList[index] - bonusCountList[index])
+  return hitCount
+
+def Get2xBonusHitCount(_gameName):
+  hitCount        = 0
+  reelKeysList    = gameDataMediator.GetReelKeyList(_gameName)
+
+  reelLength      = len(reelKeysList)
+  indexList1      = [index for index in range(reelLength)]
+
+  for index1 in indexList1:
+    indexList2         = indexList1[index1 + 1:]
+    for index2 in indexList2:
+        hitIndexList   = [index1, index2]
+        hitCount      += GetHitCountAtIndex(hitIndexList, reelLength, _gameName)
+
   return hitCount
 
 def Get3xBonusHitCount(_gameName):
@@ -167,7 +189,8 @@ def main(_gameNo):
   bonusStatsDict['bonusPayPercentage']    = bonusPayPercentage
   bonusStatsDict['bonusPayValue']         = bonusPayValue
 
-  fileSystemManager.createBonusStatsDict(gameName, bonusStatsDict)
+  fielStr = utility.GetFileStrForDict(bonusStatsDict)
+  fileSystemManager.createBonusStatsDict(gameName, fielStr)
 
 if __name__ == "__main__":
   main(sys.argv[1])

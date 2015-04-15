@@ -1,24 +1,34 @@
 {
-	"bonusWeightedHitSum": 0.0015793733836100526, 
-	"bonusMaxLineFrequency": 34.38588791256744, 
+
+	"bonusWeightedHitSum": 0.00157937338361,
+	"bonusMaxLineFrequency": 1.90942656039,
 	"bonusWeightedHitRatio": {
-		"3x": 0.001413244992638652, 
-		"5x": 4.614677526983353e-06, 
-		"4x": 0.00016151371344441738
-		}, 
+
+		"3": 0.00141324499264,
+		"2": 0.0,
+		"5": 4.61467752698e-06,
+		"4": 0.000161513713444
+	
+	},
 	"bonusHitRatioDict": {
-		"3x": 0.001413244992638652, 
-		"5x": 4.614677526983353e-07, 
-		"4x": 4.0378428361104345e-05
-		}, 
-	"bonusPayValue": 170.953875, 
+
+		"3": 0.00141324499264,
+		"2": 0.0247317873712,
+		"5": 4.61467752698e-07,
+		"4": 4.03784283611e-05
+	
+	},
+	"bonusPayValue": 170.953875,
 	"bonusHitDict": {
-		"3x": 98000, 
-		"5x": 32, 
-		"4x": 2800
-		}, 
-	"totalComboCounts": 69343957, 
-	"bonusHitRatioSum": 0.0014540848887524547, 
-	"bonusPayPercentage": 27, 
-	"bonusMaxLineHitRatio": 0.029081697775049094
-}
+
+		"3": 98000,
+		"2": 1715000,
+		"5": 32,
+		"4": 2800
+	
+	},
+	"totalComboCounts": 69343957,
+	"bonusHitRatioSum": 0.0261858722599,
+	"bonusPayPercentage": 27,
+	"bonusMaxLineHitRatio": 0.523717445199
+	}

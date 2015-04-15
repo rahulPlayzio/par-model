@@ -1,3 +1,4 @@
+import copy
 import operator
 import gameDataMediator
 
@@ -7,7 +8,7 @@ def GetGameName(_gameNo):
   return gameName
 
 def IsNonPaying(_symbol):
-  if (_symbol == 'Scatter' or _symbol == 'Bonus'): return True
+  if (_symbol == 'Scatter' or _symbol == 'Bonus' or _symbol == 'Scatter Multiplier' or _symbol == 'XWild'): return True
   else: return False
 
 def GetSortedDictByValue(_dictVar):
@@ -21,23 +22,48 @@ def ConfigMatches(_reelConfigList, _comboPayList):
       return False
   return True
 
-'''
-def ExchangeStrAtIndex(_strList, _index1, _index2):
-  temp               = _strList[_index1]
-  _strList[_index1]  = _strList[_index2]
-  _strList[_index2]  = temp
-  return _strList
+def RemoveKeyFromDict(_dict, _key):
+  newDict = dict(_dict)
+  del newDict[_key]
+  return newDict
 
-def GetBonusPayPercentage(_gameName):
-  filePathBonusPay =  fileNameManager.getBonusPayFilePath(_gameName)
-  bonusPay         =  getFileData(filePathBonusPay)
-  return bonusPay
+def RemoveItemFromList(_list, _item):
+  newList = copy.copy(_list)
+  newList.remove(_item)
+  return newList
 
-def GetDictFromList(_valueList, _keyList):
-  listLength = len(_valueList)
-  dictVar    = {}
-  for index in range(listLength):
-    dictVar[_keyList[index]] = _valueList[index]
-  return dictVar
+def IsSymbolInReels(_gameName, _symbol):
+  symbolArray = gameDataMediator.GetSymbolsArray(_gameName)
+  return (_symbol in symbolArray)
 
-'''
+def isNumber(_item):
+  try:
+    float(_item)
+    return True
+  except ValueError:
+    return False
+
+def GetFileStrForDict(_dictVar, _length = 1):
+  strVar = ''
+  strVar = '{\n'
+  firstIteration = True
+  for keyVar in _dictVar:
+    value   = _dictVar[keyVar]
+    if type(value) == type({}): value = GetFileStrForDict(value, _length + 1)
+    #else:                       value = round(value, 7)
+    
+    if (firstIteration):
+      strVar += '\n'
+      firstIteration = False
+    else:
+      strVar += ',\n'
+
+    strVar += ('\t' * _length)
+    strVar += '\"'   + str(keyVar) + '\"'
+    strVar += ': '
+    strVar += str(value)
+
+  strVar += ('\n\t' * _length)
+  strVar += '}'
+  return strVar
+

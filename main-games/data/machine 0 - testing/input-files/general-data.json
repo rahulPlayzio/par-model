@@ -5,7 +5,7 @@
     "reelsCount":5,
     "rowsCount":3,
     "maxLines": 20,
-    "payBothWays": true,
+    "payBothWays": false,
     "scatterKeys": ["3", "4", "5"],
     "scatterFreeSpins": {
         "3": 5, 

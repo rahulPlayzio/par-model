@@ -1,1 +1,40 @@
-{"scatterFrequency": 9.660377358490566, "scatterHitRatioSum": 0.103515625, "scatterMultiplier": 2.5664160401002505, "scatterHitDict": {"3x": 21870, "5x": 243, "4x": 3645}, "scatterFrequencyDict": {"3x": 11.377777777777778, "5x": 1024.0, "4x": 68.26666666666667}, "scatterPayFactorSum": 0.6103515625, "scatterHitRatioDict": {"3x": 0.087890625, "5x": 0.0009765625, "4x": 0.0146484375}, "totalCombos": 248832, "scatterPayFactorDict": {"3x": 0.439453125, "5x": 0.0244140625, "4x": 0.146484375}}
+{
+
+	"scatterFrequency": 51.3916868807,
+	"scatterHitRatioSum": 0.0194584,
+	"scatterMultiplierFactor": 1.11643651328,
+	"scatterHitDict": {
+
+		"3": 1588005,
+		"2": 10683873,
+		"5": 2916,
+		"4": 110808
+	
+	},
+	"scatterFrequencyDict": {
+
+		"3": 55.0718412,
+		"2": 8.1856506,
+		"5": 30030.03003,
+		"4": 789.2659826
+	
+	},
+	"scatterPayFactorSum": 0.104293,
+	"scatterHitRatioDict": {
+
+		"3": 0.0181581,
+		"2": 0.122165,
+		"5": 3.33e-05,
+		"4": 0.001267
+	
+	},
+	"totalCombos": 87454458,
+	"scatterPayFactorDict": {
+
+		"3": 0.0907905,
+		"2": 0.0,
+		"5": 0.0008325,
+		"4": 0.01267
+	
+	}
+	}

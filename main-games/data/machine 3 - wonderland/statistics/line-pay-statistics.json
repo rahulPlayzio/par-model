@@ -1,8 +1,9 @@
 {
-	"singleLineHitCount": 10009120, 
-	"singleLineHitRatio": 0.06069214876033058, 
-	"linePayAmount": 96804267, 
-	"maxLineHitRatio": 1.8207644628099173, 
-	"totalLineCombos": 164916224, 
-	"linePayPercentage": 58.699056194738
-}
+
+	"singleLineHitCount": 10009120,
+	"singleLineHitRatio": 0.0606921487603,
+	"linePayAmount": 96847387,
+	"maxLineHitRatio": 1.82076446281,
+	"totalLineCombos": 164916224,
+	"linePayPercentage": 58.7252028036
+	}

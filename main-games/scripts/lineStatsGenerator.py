@@ -63,7 +63,8 @@ def main(_gameNo):
   lineStatsDict['linePayPercentage']   = linePayPercentage
   lineStatsDict['maxLineHitRatio']     = maxLineHitRatio
 
-  fileSystemManager.createLineStatsDict(gameName, lineStatsDict)
+  fileStr = utility.GetFileStrForDict(lineStatsDict)
+  fileSystemManager.createLineStatsDict(gameName, fileStr)
 
 if __name__ == "__main__":
   main(sys.argv[1])

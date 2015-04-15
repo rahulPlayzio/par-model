@@ -1,0 +1,31 @@
+{
+
+	"scatterFrequency": 13.1372208997,
+	"scatterHitRatioSum": 0.0761196,
+	"scatterPayPercentage": 18.0424,
+	"scatterHitDict": {
+
+		"3": 488376,
+		"2": 4765032,
+		"5": 486,
+		"4": 24543
+	
+	},
+	"scatterFrequencyDict": {
+
+		"3": 141.9889817,
+		"2": 14.5526727,
+		"5": 142857.142857,
+		"4": 2825.6569652
+	
+	},
+	"scatterHitRatioDict": {
+
+		"3": 0.0070428,
+		"2": 0.0687159,
+		"5": 7e-06,
+		"4": 0.0003539
+	
+	},
+	"totalCombos": 69343957
+	}

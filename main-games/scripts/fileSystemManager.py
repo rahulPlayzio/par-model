@@ -5,20 +5,10 @@ import filePathManager
 # PUBLIC FUNCTIONS
 # GET FILE DATA FUNCTIONS
 # INPUT FILES
-def GetGeneralDataDict(_gameName):
-  filePath         = filePathManager.GetGeneralDataPath(_gameName)
+def GetMainGameDataDict(_gameName):
+  filePath         = filePathManager.GetMainGameFilePath(_gameName)
   generalDataDict  = _GetJSONData(filePath)
   return generalDataDict
-
-def GetPayTableDict(_gameName):
-  filePath         = filePathManager.GetPayTableFilePath(_gameName)
-  payTableDict     = _GetJSONData(filePath)
-  return payTableDict
-
-def GetReelDataDict(_gameName):
-  filePath         = filePathManager.GetReelDataFilePath(_gameName)
-  symDistDict      = _GetJSONData(filePath)
-  return symDistDict
 
 # INTERMEDIATE FILES
 def GetComboPayDict(_gameName):
@@ -74,29 +64,33 @@ def createComboPayDict(_gameName, _comboPayDict):
   filePath    = filePathManager.GetComboPayFilePath(_gameName)
   _CreateJSONFile(filePath, _comboPayDict)
 
-def createComboCountDict(_gameName, _comboCountDict):
+def createComboCountDict(_gameName, _comboCountStr):
   filePath    = filePathManager.GetComboCountFilePath(_gameName)
-  _CreateJSONFile(filePath, _comboCountDict)
+  _CreateFile(filePath, _comboCountStr)
 
 def createReelStripsDict(_gameName, _reelStripDict):
   filePath    = filePathManager.GetReelStripsFilePath(_gameName)
   _CreateJSONFile(filePath, _reelStripDict)
 
-def createLineStatsDict(_gameName, _lineStatsDict):
+def createLineStatsDict(_gameName, _lineStatsStr):
   filePath    = filePathManager.GetLineStatsFilePath(_gameName)
-  _CreateJSONFile(filePath, _lineStatsDict)
+  _CreateFile(filePath, _lineStatsStr)
 
-def createBonusStatsDict(_gameName, _bonusStatsDict):
+def createBonusStatsDict(_gameName, _bonusStatsStr):
   filePath    = filePathManager.GetBonusStatsFilePath(_gameName)
-  _CreateJSONFile(filePath, _bonusStatsDict)
+  _CreateFile(filePath, _bonusStatsStr)
 
-def createScatterStatsDict(_gameName, _scatterStatsDict):
+def createScatterStatsDict(_gameName, _scatterStatsStr):
   filePath    = filePathManager.GetScatterStatsFilePath(_gameName)
-  _CreateJSONFile(filePath, _scatterStatsDict)
+  _CreateFile(filePath, _scatterStatsStr)
 
-def createGameStatsDict(_gameName, _gameStatsDict):
+def createScatterMultiplierStatsDict(_gameName, _scatterStatsStr):
+  filePath    = filePathManager.GetScatterMultStatsFilePath(_gameName)
+  _CreateFile(filePath, _scatterStatsStr)
+
+def createGameStatsDict(_gameName, _gameStatsStr):
   filePath    = filePathManager.GetGameStatsFilePath(_gameName)
-  _CreateJSONFile(filePath, _gameStatsDict)
+  _CreateFile(filePath, _gameStatsStr)
 
 def createFormatedReel(_gameName, _virtualReel):
   filePath    = filePathManager.GetFormatedReelFilePath(_gameName)
@@ -109,7 +103,6 @@ def createFormatedPayTable(_gameName, _payTable):
 def createformatedGameData(_gameName, _gameData):
   filePath    = filePathManager.GetFormatedGameDataFilePath(_gameName)
   _CreateFile(filePath, _gameData)
-
 
 # PRIVATE FUNCTIONS
 def _GetFileData(_fileName):

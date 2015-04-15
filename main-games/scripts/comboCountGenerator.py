@@ -11,11 +11,11 @@ def ComboGenerator(_gameName, _comboList):
   comboCount        = [0] * len(_comboList)
 
   completionState   = 0
-  reel1             =  reelStripDict[reelStripKey[0]]
-  reel2             =  reelStripDict[reelStripKey[1]]
-  reel3             =  reelStripDict[reelStripKey[2]]
-  reel4             =  reelStripDict[reelStripKey[3]]
-  reel5             =  reelStripDict[reelStripKey[4]]
+  reel1             =  reelStripDict['1']
+  reel2             =  reelStripDict['2']
+  reel3             =  reelStripDict['3']
+  reel4             =  reelStripDict['4']
+  reel5             =  reelStripDict['5']
 
   for index1 in range(len(reel1)):
     completionState = _PrintCompletionState(index1, reel1, completionState)
@@ -35,6 +35,7 @@ def ComboGenerator(_gameName, _comboList):
               reverseMatchState = utility.ConfigMatches(reverseReelConfig, comboPay)
               if (strightMatchState or (payBothWaysState and reverseMatchState)):
                 comboCount[index] += 1
+                if (s3 == 'XWild'): comboCount[index] += 2
                 break
 
   return comboCount
@@ -51,7 +52,8 @@ def CreateComboCountFile(_gameName):
     comboCount               = comboCountList[index]
     comboCountDict[comboStr] = comboCount
 
-  fileSystemManager.createComboCountDict(_gameName, comboCountDict)
+  fielStr = utility.GetFileStrForDict(comboCountDict)
+  fileSystemManager.createComboCountDict(_gameName, fielStr)
 
 
 def main(_gameNo):
@@ -59,7 +61,8 @@ def main(_gameNo):
   CreateComboCountFile(gameName)
 
 def _AreNonMatchingSymbols(_symbol1, _symbol2):
-  return (_symbol1 != _symbol2 and _symbol1 != 'Wild' and _symbol2 != 'Wild')
+  wildList = ['Wild', 'XWild']
+  return (_symbol1 != _symbol2 and _symbol1 not in wildList and _symbol2 not in wildList)
 
 def _PrintCompletionState(_index, listVar, _completionState):
   currentCompletionState = _index * 100 / len(listVar)

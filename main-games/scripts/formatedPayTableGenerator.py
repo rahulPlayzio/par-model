@@ -4,14 +4,10 @@ import gameDataMediator
 import fileSystemManager
 
 def GetPayTableStr(_gameName):
-  payTableDict   = gameDataMediator.GetPayTableDict(_gameName)
   symbolMapDict  = gameDataMediator.GetSymbolIDMap()
   symbolArray    = gameDataMediator.GetSymbolsArray(_gameName)
+  payTableDict   = gameDataMediator.GetPayTableDict(_gameName)
 
-  nonPayingSymbol = {}
-  nonPayingSymbol['Bonus']   = gameDataMediator.GetBonusPayWeightsDict(_gameName)
-  nonPayingSymbol['Scatter'] = gameDataMediator.GetScatterFreeSpinDict(_gameName)
-  
   payTableStr    = '    "payTable":['
   for index in range(len(symbolArray)):
     key          = symbolArray[index]
@@ -20,15 +16,10 @@ def GetPayTableStr(_gameName):
     payTableStr += '      {\n'
     payTableStr += '        "id":' + symbolID + ',\n'
     payTableStr += '        "payout": {'
-    if (utility.IsNonPaying(key)):
-      payTableStr += ' "5":' + str(nonPayingSymbol[key]['5']) + ','
-      payTableStr += ' "4":' + str(nonPayingSymbol[key]['4']) + ','
-      payTableStr += ' "3":' + str(nonPayingSymbol[key]['3']) + ''
-    else:
-      if payTableDict[key]['5'] != 0: payTableStr +=  ' "5":' + str(payTableDict[key]['5'])
-      if payTableDict[key]['4'] != 0: payTableStr += ', "4":' + str(payTableDict[key]['4'])
-      if payTableDict[key]['3'] != 0: payTableStr += ', "3":' + str(payTableDict[key]['3'])
-      if payTableDict[key]['2'] != 0: payTableStr += ', "2":' + str(payTableDict[key]['2'])
+    if payTableDict[key]['5'] != 0: payTableStr +=  ' "5":' + str(payTableDict[key]['5'])
+    if payTableDict[key]['4'] != 0: payTableStr += ', "4":' + str(payTableDict[key]['4'])
+    if payTableDict[key]['3'] != 0: payTableStr += ', "3":' + str(payTableDict[key]['3'])
+    if payTableDict[key]['2'] != 0: payTableStr += ', "2":' + str(payTableDict[key]['2'])
     payTableStr += ' }\n'
     payTableStr += '      }'
     if (index + 1 != len(symbolArray)): payTableStr += ','

@@ -1,1 +1,8 @@
-{"Line Payout": 60.2382734375, "Bonus Payout": 27, "Scatter Payout": 1.1192499626188, "Net Payout": 97.64143428385051}
+{
+
+	"Scatter Multiplier Payout": 0,
+	"Line Payout": 60.2382734375,
+	"Bonus Payout": 27,
+	"Scatter Payout": 1.11925092565,
+	"Net Payout": 97.641518297
+	}
